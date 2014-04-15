@@ -6,7 +6,7 @@
     <license>Apache 2.0</license>
     <keywords>ios,autolock</keywords>
     <js-module src="www/no-autolock.js" name="no-autolock">
-        <clobbers target="NoAutolock" />
+        <clobbers target="navigator.noAutolock" />
     </js-module>
     <platform name="ios">
         <config-file target="config.xml" parent="/*">

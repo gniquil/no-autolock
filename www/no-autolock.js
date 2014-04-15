@@ -1,6 +1,8 @@
-window.NoAutolock = {
+var exec = require('cordova/exec');
+
+var noAutolock = {
   enableAutolock: function() {
-    cordova.exec(
+    exec(
       function() {},
       function() {},
       "NoAutolock",
@@ -9,7 +11,7 @@ window.NoAutolock = {
     );
   },
   disableAutolock: function() {
-    cordova.exec(
+    exec(
       function() {},
       function() {},
       "NoAutolock",
@@ -18,3 +20,5 @@ window.NoAutolock = {
     );
   }
 };
+
+module.exports = noAutolock;
