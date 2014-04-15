@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="org.apache.cordova.no-autolock" version="0.0.1">
+    <name>No-Autolock</name>
+    <description>Plugin to disable iOS autolock</description>
+    <license>Apache 2.0</license>
+    <keywords>ios,autolock</keywords>
+    <js-module src="www/no-autolock.js" name="no-autolock">
+        <clobbers target="NoAutolock" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="NoAutolock">
+                <param name="ios-package" value="CDVNoAutolock"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVNoAutolock.h" />
+        <source-file src="src/ios/CDVNoAutolock.m" />
+    </platform>
+</plugin>
