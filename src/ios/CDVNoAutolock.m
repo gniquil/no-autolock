@@ -1,4 +1,4 @@
-#import "Echo.h"
+#import "CDVNoAutolock.h"
 #import <Cordova/CDV.h>
 
 @implementation CDVNoAutolock
