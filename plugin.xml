@@ -17,4 +17,16 @@
         <header-file src="src/ios/CDVNoAutolock.h" />
         <source-file src="src/ios/CDVNoAutolock.m" />
     </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NoAutolock">
+            <param name="android-package" value="org.apache.cordova.noautolock.NoAutolock"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/NoAutolock.java" target-dir="src/org/apache/cordova/noautolock" />
+    </platform>
+
 </plugin>
