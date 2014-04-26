@@ -28,17 +28,25 @@ public class NoAutolock extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
-        if (action.equals("enableAutolock")) {
-            this.cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        if (action.equals("enableAutolock")) {        
+          cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                  cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                }
+            });
+            return true;
+ 
         } else if (action.equals("disableAutolock")){
-            this.cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+            cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                  cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                }
+            });
+            return true;
         }
         else {
             return false;
         }
-
-        callbackContext.success();
-        return true;
     }
 
 }

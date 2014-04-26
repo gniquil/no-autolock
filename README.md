@@ -14,6 +14,7 @@ with the game via tilting the phone rather than tap/swipe).
 
 ## Supported Platforms
 
+- android
 - iOS
 
 ## Methods
@@ -36,6 +37,10 @@ This is really just a simple wrapper for
 [UIApplication sharedApplication].idleTimerDisabled = YES;
 ```
 
+```java
+cordova.getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+```
+
 ## noAutolock.disableAutolock
 
 Disable the iOS idle timer. 
@@ -48,4 +53,8 @@ Similarly this is just
 
 ```objective-c
 [UIApplication sharedApplication].idleTimerDisabled = NO;
+```
+
+```java
+cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 ```
